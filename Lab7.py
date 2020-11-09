@@ -11,11 +11,11 @@ def linearSearch(target,iList):
     position=-1
     i=0
     while i<len(iList):
-        i+=1
+        
         if target==iList[i]:
-            position=i
+            position=i+1
             break
-              
+        i+=1     
     return position
 
 def linearSearchFor(target,iList):
@@ -25,23 +25,24 @@ def linearSearchFor(target,iList):
     '''
     position=-1
     
-    for index,element in enumerate(reversed(iList),start=1):
+    for index,element in enumerate(reversed(iList)):
         
         if target==element:
-            position=index
+            position=len(iList)-index
             break
             
-    return len(iList)-position
+    return position
     
-
-           
-        
-    
-
 
 myList=[2,4,5,6,7,8,9]
-print(linearSearch(9,myList))
-print(linearSearchFor(10,myList))
+print(linearSearch(2,myList))
+print(linearSearchFor(6,myList))
+
+
+
+
+
+
 
 
 
