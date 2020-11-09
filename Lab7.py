@@ -19,17 +19,19 @@ def linearSearch(target,iList):
     return position
 
 def linearSearchFor(target,iList):
+    '''
+    Returns the position of the target item if found, or -1 otherwise
 
-    position=0
-    i=0
-    for i in range(len(iList)-1):
-        i+=1
-        if target==iList[i]:
-            position=i
+    '''
+    position=-1
+    
+    for index,element in enumerate(reversed(iList),start=1):
+        
+        if target==element:
+            position=index
             break
-    else:
-        position=-1
-    return position
+            
+    return len(iList)-position
     
 
            
@@ -39,7 +41,11 @@ def linearSearchFor(target,iList):
 
 myList=[2,4,5,6,7,8,9]
 print(linearSearch(9,myList))
-print(linearSearchFor(7,myList))
+print(linearSearchFor(10,myList))
+
+
+
+
 
 
 
