@@ -54,22 +54,22 @@ def binarySearch(target,iList):
             return -1
 
 def bubbleSort(iList):
-   
+    '''
+        This function makes a bubble sort
+    '''
+    counter=0  
     n=len(iList)
     for i in range(n-1):
+        
         for x in range(0,(n-i-1)):
+            counter+=1
             if iList[x]>iList[x+1]:
                 iList[x],iList[x+1]=iList[x+1],iList[x]
-    return iList       
+    return iList,counter       
 
 
 
-
-    
-
-
-
-myList=[2,5,10,6,7,8,9]
+myList=[2,3,6,7,8,9,10,1]
 myList.sort()
 #print(linearSearch(2,myList))
 #print(linearSearchFor(2,myList))
@@ -77,6 +77,7 @@ r=binarySearch(7,myList)
 print(r)
 s=bubbleSort(myList)
 print(s)
+
 
 
 #nList=myList[0:len(myList)//2]
