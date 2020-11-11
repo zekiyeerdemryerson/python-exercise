@@ -72,26 +72,31 @@ def bubbleSort(iList):
 
 
 def selectionSort(iList):
-    i = j = 0
     n = len(iList)
-    sList = []
+    minindex = 0
     for i in range(n - 1):
-        for j in range(n - 1):
-            if iList[j] > iList[j + 1]:
-                sList = []
+        minindex = i
+        for j in range(i + 1, n):
+            if iList[minindex] > iList[j]:
+                # min = iList[j]
+                minindex = j
+        iList[i], iList[minindex] = iList[minindex], iList[i]
+    return iList
 
 
-print("a")
-
-
-myList = [2, 3, 6, 7, 8, 9, 10, 1]
-myList.sort()
+myList1 = [2, 3, 6, 7, 8, 9, 10, 1]
+myList2 = [6, 7, 5, 3, 2, 10]
+myList3 = [3, 2, 1]
+myList4 = [7, 4, 3, 28, 12]
+# myList.sort()
 # print(linearSearch(2,myList))
 # print(linearSearchFor(2,myList))
-r = binarySearch(7, myList)
-print(r)
-s = bubbleSort(myList)
-print(s)
+# r = binarySearch(7, myList)
+# print(r)
+# s = bubbleSort(myList)
+# print(s)
+t = selectionSort(myList4)
+print(t)
 
 
 # nList=myList[0:len(myList)//2]
