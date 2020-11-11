@@ -4,6 +4,9 @@
 # Q1a
 
 
+from typing import Counter
+
+
 def linearSearch(target, iList):
     """
     Returns the position of the target item if found, or -1 otherwise
@@ -74,14 +77,17 @@ def bubbleSort(iList):
 def selectionSort(iList):
     n = len(iList)
     minindex = 0
+    counter = 0
     for i in range(n - 1):
         minindex = i
         for j in range(i + 1, n):
+            counter += 1
             if iList[minindex] > iList[j]:
                 # min = iList[j]
                 minindex = j
+
         iList[i], iList[minindex] = iList[minindex], iList[i]
-    return iList
+    return iList, counter
 
 
 myList1 = [2, 3, 6, 7, 8, 9, 10, 1]
@@ -93,7 +99,7 @@ myList4 = [7, 4, 3, 28, 12]
 # print(linearSearchFor(2,myList))
 # r = binarySearch(7, myList)
 # print(r)
-# s = bubbleSort(myList)
+# s = bubbleSort(myList3)
 # print(s)
 t = selectionSort(myList4)
 print(t)
