@@ -90,6 +90,18 @@ def selectionSort(iList):
     return iList, counter
 
 
+def insertionSort(iList):
+    n = len(iList)
+
+    for i in range(2, n):
+
+        for j in range(i, 0, -1):
+            if iList[j] < iList[j - 1]:
+                iList[j], iList[j - 1] = iList[j - 1], iList[j]
+
+    return iList
+
+
 myList1 = [2, 3, 6, 7, 8, 9, 10, 1]
 myList2 = [6, 7, 5, 3, 2, 10]
 myList3 = [3, 2, 1]
@@ -101,8 +113,11 @@ myList4 = [7, 4, 3, 28, 12]
 # print(r)
 # s = bubbleSort(myList3)
 # print(s)
-t = selectionSort(myList4)
-print(t)
+# t = selectionSort(myList4)
+# print(t)
+
+i = insertionSort(myList2)
+print(i)
 
 
 # nList=myList[0:len(myList)//2]
