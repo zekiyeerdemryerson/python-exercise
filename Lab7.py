@@ -102,6 +102,17 @@ def insertionSort(iList):
     return iList
 
 
+def insertionSortwhile(iList):
+    n = len(iList)
+
+    for i in range(2, n):
+        j = i - 1
+        while j > 0 and iList[i] < iList[j]:
+            iList[j], iList[j - 1] = iList[j - 1], iList[j]
+            j = j - 1
+    return iList
+
+
 myList1 = [2, 3, 6, 7, 8, 9, 10, 1]
 myList2 = [6, 7, 5, 3, 2, 10]
 myList3 = [3, 2, 1]
@@ -116,7 +127,7 @@ myList4 = [7, 4, 3, 28, 12]
 # t = selectionSort(myList4)
 # print(t)
 
-i = insertionSort(myList2)
+i = insertionSortwhile(myList2)
 print(i)
 
 
